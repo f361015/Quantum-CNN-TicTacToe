@@ -47,11 +47,11 @@ Our approach involves several key steps:
 #### Dataset:
 We used a dataset comprising all tic-tac-toe endgame positions that did not result in a draw. This dataset presents a higher complexity compared to typical QCNN benchmarks (e.g., simple pattern recognition), allowing us to test the limits of the QCNN model.
 
-![Figure 1a: Generated Dataset Examples](/Report/assets/dataset.jpeg)
-*Figure 1a: Generated Dataset Examples*
-
-![Figure 1b: Convolution Model Overview](/Report/assets/CCNN.png)
-*Figure 1b: Convolution Model Overview*
+*Figure 1: Dataset and Convolution Model Overview*
+| Generated Dataset Examples                             | Convolution Model Overview                         |
+| :---------------------------------------------------: | :-----------------------------------------------: |
+| ![_Figure 1a_](/Report/assets/dataset.jpeg)           | ![_Figure 1b_](/Report/assets/CCNN.png)            |
+| *(a) Generated Dataset Examples* | *(b) Convolution Model Overview* |
 
 #### Network Architectures:
 * **CCNN:** `Input → C₃ₓ₃ → P₃ₓ₃,₂ₓ₂ → C₂ₓ₂ → P₂ₓ₂,₁ₓ₁ → Output`
@@ -62,23 +62,19 @@ The QCNN incorporates additional components:
 * **ZFeatureMap:** Encodes classical input data into quantum states (qubits).
 * **Residual Blocks (R(x), R₂(x)):** Integrated based on recent research to potentially improve training dynamics.
 
-![QCNN Layer Structure](/Report/assets/QCNN.png)
 *Figure 2: QCNN Layer Structure*
+![_Figure 2_](/Report/assets/QCNN.png)
 
-![ZFeatureMap](/Report/assets/zfm.png)
-*(a) ZFeatureMap*
+*Figure 3: Quantum Circuit Components*
+| ZFeatureMap                       | R(x) Block                      | R2(x) Block                       |
+| :-------------------------------: | :-----------------------------: | :-----------------------------: |
+| ![_Figure 3a_](/Report/assets/zfm.png) | ![_Figure 3b_](/Report/assets/rb.png) | ![_Figure 3c_](/Report/assets/r2.png) |
+| *(a) ZFeatureMap* | *(b) R(x)* | *(c) R₂(x)* |
 
-![R(x) Block](/Report/assets/rb.png)
-*(b) R(x)*
-
-![R2(x) Block](/Report/assets/r2.png)
-*(c) R₂(x)*
-
-![C Layer Element](/Report/assets/conv_element.png)
-*(d) C Layer element*
-
-![P Layer Element](/Report/assets/pool_element.png)
-*(e) P Layer element*
+| C Layer Element                        | P Layer Element                        |
+| :------------------------------------: | :------------------------------------: |
+| ![_Figure 3d_](/Report/assets/conv_element.png) | ![_Figure 3e_](/Report/assets/pool_element.png) |
+| *(d) C Layer element* | *(e) P Layer element* |
 
 #### Training Details:
 * **CCNN:** Trained using the **Adam** optimizer with **Cross Entropy** loss.
@@ -92,24 +88,21 @@ The QCNN incorporates additional components:
 * **Accuracy:** 81.5 ± 1%
 * **Training Epochs:** 300
 
-![CCNN Accuracy](/Report/assets/accu.jpeg)
-*(a) CCNN Accuracy*
+*Figure 4: CCNN Results*
+| CCNN Accuracy                        | CCNN Cross Entropy Loss                   |
+| :----------------------------------: | :--------------------------------------: |
+| ![_Figure 4a_](/Report/assets/accu.jpeg) | ![_Figure 4b_](/Report/assets/cf.jpeg)   |
+| *(a) CCNN Accuracy* | *(b) CCNN Cross Entropy Loss* |
 
-![CCNN Cross Entropy Loss](/Report/assets/cf.jpeg)
-*(b) CCNN Cross Entropy Loss*
+#### Quantum CNN (QCNN):
+* **Accuracy (without Residual Blocks):** 77%
+* **Training Epochs (without Residual Blocks):** 200
 
-#### Quantum CNN (QCNN - without Residual Blocks):
-* **Accuracy:** 77%
-* **Training Epochs:** 200
-
-![QCNN Squared Error Loss (without Residual Blocks)](/Report/assets/qcnn.jpeg)
-*(a) QCNN Sqrd. Error Loss wo/Residual Blocks*
-
-#### Quantum CNN (QCNN - with Residual Blocks):
-The performance impact of adding residual blocks was also evaluated.
-
-![QCNN with Residual Blocks Placeholder Viz](/Report/assets/image5b.png)
-*(b) QCNN w/Residual Blocks (Visualization)*
+*Figure 5: QCNN Loss Comparison*
+| QCNN Loss (without Residual Blocks)                  | QCNN Visualization (with Residual Blocks)             |
+| :-------------------------------------------------: | :---------------------------------------------------: |
+| ![_Figure 5a_](/Report/assets/qcnn.jpeg)            | ![_Figure 5b_](/Report/assets/image5b.png)             |
+| *(a) QCNN Sqrd. Error Loss wo/Residual Blocks* | *(b) QCNN w/Residual Blocks (Visualization)* |
 
 ---
 
@@ -119,9 +112,9 @@ The baseline QCNN achieved a respectable accuracy (77%) in significantly fewer e
 
 This suggests that QCNNs hold promise, particularly as quantum hardware matures and overcomes the limitations of classical simulation. The exploration of residual blocks further contributes to understanding how to optimize these quantum neural network architectures.
 
-*(Note: The placeholder image below was included in the report but seems unrelated to the core results.)*
-![Placeholder Image](/Report/assets/image6.png)
-*Figure 5: Placeholder*
+*(Note: The placeholder image below was included in the report.)*
+![_Figure 6_](/Report/assets/image6.png)
+*Figure 6: Placeholder*
 
 ---
 
