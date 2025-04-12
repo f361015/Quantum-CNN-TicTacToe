@@ -1,7 +1,5 @@
 # Quantum-CNN-TicTacToe
 
-### Mini Project CS-2-14(PO)
-
 ---
 
 **Authors:**
