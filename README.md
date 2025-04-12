@@ -112,10 +112,9 @@ The baseline QCNN achieved a respectable accuracy (77%) in significantly fewer e
 
 Meanwhile, our Improved-Residual-QCNN challenges our current Classical CNN! This small improvement and adding residual-blocks is made a significant breakthrough!
 
-|       |    |
-| :-------------------------------------------------: | :---------------------------------------------------: |
-| ![_Figure 6a_](/Report/assets/2.jpeg)            | ![_Figure 6b_](/Report/assets/imp_qcnn.jpeg)             |
-| ![_Figure 6c_](/Report/assets/1.jpeg)            |
+ ![_Figure 6a_](/Report/assets/2.jpeg)                   
+ ![_Figure 6c_](/Report/assets/1.jpeg)        
+ ![_Figure 6b_](/Report/assets/confmat.jpeg)         
 
 Q. **So, What improved**?
 
