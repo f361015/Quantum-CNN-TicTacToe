@@ -96,6 +96,15 @@ The QCNN incorporates additional components:
 * **Accuracy (without Residual Blocks):** 77%
 * **Training Epochs (without Residual Blocks):** 200
 
+We also made another improvement in our residual QCNN, that is, diagonally entangling the qubits
+to also capture the diagonal features of this dataset. You can see the full circuit in the GitHub repo, rest
+all the components of the QCNN are compeletely the same. Now the results of just adding one layer of
+Residual Blocks is as follows.
+
+#### Improved-(QCNN):
+* **Accuracy (without Residual Blocks):** 81.73%
+* **Training Epochs (without Residual Blocks):** 300
+
 *Figure 5: QCNN Loss Comparison*
 | QCNN Loss (without Residual Blocks)                  | QCNN Visualization (with Residual Blocks)             |
 | :-------------------------------------------------: | :---------------------------------------------------: |
