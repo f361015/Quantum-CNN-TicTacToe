@@ -18,9 +18,9 @@ Mini Project - \emph{CS-2-14(PO)}  \\\\  \small{By} \\\\  Krishiv Trivedi\hspace
 \section*{Introduction}
 Quantum computing is a new computing paradigm based on quantum
 mechanics that utilizes qubits instead of classical bits to store and process
-information. Quantum nature like superposition and entanglement aren't just theoritical figments, now with the capacity to actually engineer these quantum systems, this nature can be meaningfully utilized and harnessed to speed up NP Algorithms like ``\emph{Brute-Force} \emph{\textbf{Knapsack}}''\footnote{(insert reference [Knapsack])} and the ``\emph{\textbf{Travelling Salesman Problem}}'' (TSP) and improve our modern AI models.\\
+information. Quantum nature like superposition and entanglement aren't just theoritical figments, now with the capacity to actually engineer these quantum systems, this nature can be meaningfully utilized and harnessed to speed up NP Algorithms like ``\emph{Brute-Force} \emph{\textbf{Knapsack}}''\footnote{[https://en.wikipedia.org/wiki/Knapsack\_problem]} and the ``\emph{\textbf{Travelling Salesman Problem}}'' (TSP) and improve our modern AI models.\\
 
- While the majority of our journey includes learning about theory of quantum circuits, learning and developing our own quantum algorithms for solving TSP etc. Our final aim of this paper will be the upcoming, \emph{Quantum Convolutional Neural Networks} (\textbf{QCNNs})\footnote{insert reference QCNNs}. We will demonstrate not only of how we can use the `Quantum' to develop better convolutional neural networks but also show an implimentation of a quantum circuit-based algorithm, \emph{quantum residual neural networks}\footnote{insert referenc (paper)}.\\
+ While the majority of our journey includes learning about theory of quantum circuits, learning and developing our own quantum algorithms for solving TSP etc. Our final aim of this paper will be the upcoming, \emph{Quantum Convolutional Neural Networks} (\textbf{QCNNs})\footnote{[https://pennylane.ai/qml/glossary/qcnn]}. We will demonstrate not only of how we can use the `Quantum' to develop better convolutional neural networks but also show an implimentation of a quantum circuit-based algorithm, \emph{quantum residual neural networks}\footnote{[https://doi.org/10.1038/s42005-024-01719-1]}.\\
 
 Finally, we will explain what we have learnt so far from this vast theory and then display the different results produced by a Classical CNN and a Quantum CNN. The results will on a fixed dataset for both the networks, and display the differences in the important parameters like accuracy, cost function trends and our current engineering limitations on implemetations of QCNNs.
 
@@ -28,8 +28,8 @@ Finally, we will explain what we have learnt so far from this vast theory and th
 In this new quantum era, as the no. of qubits increase and our engineering catches up to our theory, the security of our existing cryptographic methods is starting to diminish. The main motivation for this project was `\textbf{Post-Quantum Cryptography}'. Later, we transposed from ``How to make a problem which cannot be efficiently cracked by a quantum computer...'' to ``All such problems which can be efficiently cracked by a quantum computer...'' where we encountered many NP hard problems but first we focused on a known solved problem of `Knapsack' after which we started to develop our own algorithm with all that we have learnt for TSP.
 \begin{itemize}
 \item[Q.] How does a Quantum Computer solve such ``\emph{Brute-force}'' problems `\emph{faster}'?
-\item[\textbf{$\rightarrow$}] We will not elaborate on the theory as to keep this report concise. While we have to classically iterate over all solutions to check, in quantum we use the \textbf{\emph{Hadamard}}\footnote{insert reference (Quantum Circuits wiki)} Gate to check all such superpositions simultaneously.\vspace{5pt}\\
-This is used extensively in quantum algorithms. Our main focus was on how to make the brute-force solution $O(2^{n})$ more optimal, which we did using \emph{\textbf{Grovers' Algorithm}}\footnote{(insert reference [Grovers])} which reduced the complexity to $O(2^{n/2})$. In general, we can say that in such brute-force approaches, Grovers provides a well-known $\sqrt{N}$ ``quadratic-speedup''.
+\item[\textbf{$\rightarrow$}] We will not elaborate on the theory as to keep this report concise. While we have to classically iterate over all solutions to check, in quantum we use the \textbf{\emph{Hadamard}}\footnote{[https://en.wikipedia.org/wiki/Quantum\_logic\_gate]} Gate to check all such superpositions simultaneously.\vspace{5pt}\\
+This is used extensively in quantum algorithms. Our main focus was on how to make the brute-force solution $O(2^{n})$ more optimal, which we did using \emph{\textbf{Grovers' Algorithm}}\footnote{[https://en.wikipedia.org/wiki/Grover\%27s\_algorithm]} which reduced the complexity to $O(2^{n/2})$. In general, we can say that in such brute-force approaches, Grovers provides a well-known $\sqrt{N}$ ``quadratic-speedup''.
 
 \item[Q.] Why did we choose \emph{QCNNs}/\emph{QRNNs}?
 \item[\textbf{$\rightarrow$}] We think that making a hands-on quantum circuit in a domain which has practical implications in the future of machine learnning and AI will not only show how we can turn our theoritical knowledge into practice, which is the best way to display what we have learnt, but also simultaneously work on the edge of scientific innovation happening in the field of quantum computing as we speak. This is why we will be implementing a very recent paper published in 2024 as our contribution to this field of research.
@@ -70,7 +70,7 @@ For our methodology, first we'll make a Quantum CNN on a particular dataset, aft
 \label{fig:test}
 \end{figure}
 
-\item \textbf{Training} of CCNN was done with Adam optimizer [\emph{PyTorch}], Cost-function: Cross Entropy. QCNN was with COBYLA optimizer [\emph{Qiskit}]\footnote{insert ref COBYLA}, Cost-function: Squared Error (Default).
+\item \textbf{Training} of CCNN was done with Adam optimizer [\emph{PyTorch}], Cost-function: Cross Entropy. QCNN was with COBYLA optimizer [\emph{Qiskit}]\footnote{[https://docs.quantum.ibm.com/api/qiskit/0.27/qiskit.algorithms.optimizers.COBYLA]}, Cost-function: Squared Error (Default).
 
 \begin{figure}[h]
 \centering
@@ -106,7 +106,7 @@ For our methodology, first we'll make a Quantum CNN on a particular dataset, aft
 \end{subfigure}%
 \label{fig:test}
 \end{figure}
-\item \textbf{Additional} blocks were added like ZFeatureMap\footnote{insert reference Zfeature map} before sending them to the layers to encode the data into qubits. And then we built and added our `Residual-Blocks' from the 2024 paper.
+\item \textbf{Additional} blocks were added like ZFeatureMap\footnote{[https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZFeatureMap]} before sending them to the layers to encode the data into qubits. And then we built and added our `Residual-Blocks' from the 2024 paper.
 \end{itemize}
 This this the method we have chosen to implement this quantum circuit. Our main focus in this paper is to show a detaied and practical implementation so we'll skip the intuition and theory which comes with this. Next is to report the results by both of these models [\emph{Now uploaded on \href{https://github.com/f361015/Quantum-CNN-TicTacToe}{GitHub}}].\footnote{Please see the references for the theoritical aspect, you won't be dissapointed!}
 
@@ -146,7 +146,12 @@ Similarly for the same dataset and same architecture for our QCNN model. Note th
 \end{figure}
 Now, we use the `Residual-Blocks' to see the difference between QCNN with and without the residual connection architecture.
 
-\emph{Insert results of our residual block paper itegration...}
+We also made another improvement in our residual QCNN, that is, diagonally entangling the qubits to also capture the diagonal features of this dataset. You can see the full circuit in the GitHub repo, rest all the components of the QCNN are compeletely the same. Now the results of just adding one layer of Residual Blocks is as follows.
+
+\begin{itemize}
+\item[$\Rightarrow$] \textbf{Accuracy}: 81.73\%
+\item[$\Rightarrow$] \textbf{Epochs}: 300
+\end{itemize}
 
 \begin{figure}[h]
 \centering
@@ -158,33 +163,51 @@ Now, we use the `Residual-Blocks' to see the difference between QCNN with and wi
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[height=.7\linewidth]{example-grid-100x100pt}
+  \includegraphics[height=.7\linewidth]{assets/imp_qcnn.jpeg}
   \caption{QCNN w/Residual Blocks}
   \label{fig:sub2}
 \end{subfigure}%
 \caption{Results of Quantum CNN}
 \label{fig:test}
 \end{figure}%
-\section*{Conclusion \& Achievements}
+\section*{Conclusion \& Future}
 
-Our QCNN model reaches almost the same accuracy the CCNN reaches in 100 epochs. With more computing and time we might be able to replace CCNN with negligible decrease in performance. Also, the point to be noted is that our code is just simulating the qubits which makes it slower than if we had a actual quantum computer.\\
+Our Non-residual QCNN model reaches almost the same accuracy the CCNN reaches in 100 epochs. With more computing and time we might be able to replace CCNN with negligible decrease in performance. Also, the point to be noted is that our code is just simulating the qubits which makes it slower than if we had a actual quantum computer.\\
 
+Meanwhile, our Improved-Residual-QCNN challenges our current Classical CNN! This small improvement and adding residual-blocks is made a significant breakthrough!
+
+\begin{itemize}
+\item[Q.] \textbf{\emph{So, What improved}}?
+\item[\textbf{$\rightarrow$}] We hypothezised that it is mostly to do with the ``\emph{Diagonal wins of a player}'', this is because, when we analyzed all the games that our quantum model got wrong, we see that it was only the games where the wins were diagonal.
+
+That is, the model correctly predicted all horizontal and vertical wins correctly. In case of diagonal cases...
+\[ \text{\textbf{Correct}: } 32/56 \text{ \textbf{Incorrect}: } 24/56 \]
+So we think the diagonalization due to the ``Residual-Blocks'' and convolution layers made it so that our new QCNN was good at identifying those extra features. Our new and improved model however, has only 19 incorrect diagonals.
+\end{itemize}
 \begin{figure}[h]
-\begin{center}
-\includegraphics[width = 0.5\textwidth]{example-image-a}
-\end{center}
-\caption{Placeholder}
-\end{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+\includegraphics[height = 0.4\textwidth]{assets/2.jpeg}
+\includegraphics[height = 0.4\textwidth]{assets/1.jpeg}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+\includegraphics[height = 0.8\textwidth]{assets/confmat.jpeg}
+\end{subfigure}%
+\end{figure}%
 
-Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet. Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet Lorem ipsum set amet.\\
+Our future prospects include making a multi-classification model. For example, a model which detects if a game is won by white or black or is a draw. We already partially have the multimodel ready on hand if you need for demonstration.\\
 
 \indent \textbf{Litrature Review \& References: }
 \begin{itemize}
-\item ref 1
-\item ref 2
-\item ref 3
-\item ref 4
-\item ref 5
+\item Wen, J., Huang, Z., Cai, D. et al. Enhancing the expressivity of quantum neural networks with residual connections. Commun Phys 7, 220 (2024). https://doi.org/10.1038/s42005-024-01719-1
+\item https://pennylane.ai/qml/glossary/qcnn
+\item https://docs.quantum.ibm.com/api/qiskit/0.27/qiskit.algorithms.optimizers.COBYLA
+\item https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZFeatureMap
+\item https://en.wikipedia.org/wiki/Grover\%27s\_algorithm
+\item https://en.wikipedia.org/wiki/Knapsack problem
+\item https://en.wikipedia.org/wiki/Quantum\_logic\_gate
 
 \end{itemize}
 
