@@ -7,7 +7,7 @@
 \usepackage{subcaption}
 \usepackage[hidelinks, colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
 
-\title{Quantum Secret Sharing and Error Correction}
+\title{Implementing Residual Connection on QCNN architecture}
 \author{
 Mini Project - \emph{CS-2-14(PO)}  \\\\  \small{By} \\\\  Krishiv Trivedi\hspace{0.2cm} [2023UMA0218] \\ Piyush Kumar \hspace{0.193cm} [2023UMA0227] \\ Krishna \hspace{1.58cm}[$2023UEE0140$] \\ Jyoti Yadav \hspace{0.86cm}[$2023UEE0139$] \\\\ \small{Supervisor:} \\ Sumit Kumar Pandey \\ \hspace{0.94cm}\\
 }
@@ -22,10 +22,10 @@ information. Quantum nature like superposition and entanglement aren't just theo
 
  While the majority of our journey includes learning about theory of quantum circuits, learning and developing our own quantum algorithms for solving TSP etc. Our final aim of this paper will be the upcoming, \emph{Quantum Convolutional Neural Networks} (\textbf{QCNNs})\footnote{[https://pennylane.ai/qml/glossary/qcnn]}. We will demonstrate not only of how we can use the `Quantum' to develop better convolutional neural networks but also show an implimentation of a quantum circuit-based algorithm, \emph{quantum residual neural networks}\footnote{[https://doi.org/10.1038/s42005-024-01719-1]}.\\
 
-Finally, we will explain what we have learnt so far from this vast theory and then display the different results produced by a Classical CNN and a Quantum CNN. The results will on a fixed dataset for both the networks, and display the differences in the important parameters like accuracy, cost function trends and our current engineering limitations on implemetations of QCNNs.
+Finally, we will explain what we have learnt so far from this vast theory and then display the different results produced by a Classical CNN and a Quantum CNN. The results will on a fixed dataset for both the networks, and display the differences in the important parameters like accuracy, cost function trends and our current engineering limitations on implemetation of QCNNs.
 
 \section*{Motivation}
-In this new quantum era, as the no. of qubits increase and our engineering catches up to our theory, the security of our existing cryptographic methods is starting to diminish. The main motivation for this project was `\textbf{Post-Quantum Cryptography}'. Later, we transposed from ``How to make a problem which cannot be efficiently cracked by a quantum computer...'' to ``All such problems which can be efficiently cracked by a quantum computer...'' where we encountered many NP hard problems but first we focused on a known solved problem of `Knapsack' after which we started to develop our own algorithm with all that we have learnt for TSP.
+In this new quantum era, as the number of qubits increase and our engineering catches up to our theory, the security of our existing cryptographic methods is starting to diminish. The main motivation for this project was `\textbf{Post-Quantum Cryptography}'. Later, we transposed from ``How to make a problem which cannot be efficiently cracked by a quantum computer...'' to ``All such problems which can be efficiently cracked by a quantum computer...'' where we encountered many NP hard problems but first we focused on a known solved problem of `Knapsack' after which we started to develop our own algorithm with all that we have learnt for TSP.
 \begin{itemize}
 \item[Q.] How does a Quantum Computer solve such ``\emph{Brute-force}'' problems `\emph{faster}'?
 \item[\textbf{$\rightarrow$}] We will not elaborate on the theory as to keep this report concise. While we have to classically iterate over all solutions to check, in quantum we use the \textbf{\emph{Hadamard}}\footnote{[https://en.wikipedia.org/wiki/Quantum\_logic\_gate]} Gate to check all such superpositions simultaneously.\vspace{5pt}\\
@@ -40,7 +40,7 @@ This is used extensively in quantum algorithms. Our main focus was on how to mak
 
 \section*{Methodology \& Implementation Idea}
 
-For our methodology, first we'll make a Quantum CNN on a particular dataset, after which we will make a equivalent Classical CNN and compare the results to see which one performs better and their cost function trends. After this, we will implement the `Residual-block' into our QCNN to see the difference it produces. 
+For our methodology, first we'll make a Quantum CNN on a particular dataset, after which we will make an equivalent Classical CNN and compare the results to see which one performs better and their cost function trends. After this, we will implement the `Residual-block' into our QCNN to see the difference it produces. 
 \begin{itemize}
 \item \textbf{Dataset} consists of all tic-tac-toe games which have not ended in a draw. This dataset is actually very complex compared to all the dataset which a QCNN is typically trained on, i.e. detecting horizontal/vertical stripes on a 2x2 or a 4x2 grid, but we decided to push the limits of current standards. This is because we wanted to make a QCNN model never made before.
 
@@ -108,7 +108,7 @@ For our methodology, first we'll make a Quantum CNN on a particular dataset, aft
 \end{figure}
 \item \textbf{Additional} blocks were added like ZFeatureMap\footnote{[https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZFeatureMap]} before sending them to the layers to encode the data into qubits. And then we built and added our `Residual-Blocks' from the 2024 paper.
 \end{itemize}
-This this the method we have chosen to implement this quantum circuit. Our main focus in this paper is to show a detaied and practical implementation so we'll skip the intuition and theory which comes with this. Next is to report the results by both of these models [\emph{Now uploaded on \href{https://github.com/f361015/Quantum-CNN-TicTacToe}{GitHub}}].\footnote{Please see the references for the theoritical aspect, you won't be dissapointed!}
+This is the method we have chosen to implement this quantum circuit. Our main focus in this paper is to show a detaied and practical implementation so we'll skip the intuition and theory which comes with this. Next is to report the results by both of these models [\emph{Now uploaded on \href{https://github.com/f361015/Quantum-CNN-TicTacToe}{GitHub}}].\footnote{Please see the references for the theoritical aspect, you won't be dissapointed!}
 
 \section*{Results}
 
@@ -174,7 +174,7 @@ We also made another improvement in our residual QCNN, that is, diagonally entan
 
 Our Non-residual QCNN model reaches almost the same accuracy the CCNN reaches in 100 epochs. With more computing and time we might be able to replace CCNN with negligible decrease in performance. Also, the point to be noted is that our code is just simulating the qubits which makes it slower than if we had a actual quantum computer.\\
 
-Meanwhile, our Improved-Residual-QCNN challenges our current Classical CNN! This small improvement and adding residual-blocks is made a significant breakthrough!
+Meanwhile, our Improved-Residual-QCNN challenges our current Classical CNN! This small improvement and adding residual-blocks has made a significant breakthrough!
 
 \begin{itemize}
 \item[Q.] \textbf{\emph{So, What improved}}?
