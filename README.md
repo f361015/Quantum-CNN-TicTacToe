@@ -101,7 +101,7 @@ The QCNN incorporates additional components:
 *Figure 5: QCNN Loss Comparison*
 | QCNN Loss (without Residual Blocks)                  | QCNN Visualization (with Residual Blocks)             |
 | :-------------------------------------------------: | :---------------------------------------------------: |
-| ![_Figure 5a_](/Report/assets/qcnn.jpeg)            | ![_Figure 5b_](/Report/assets/image5b.png)             |
+| ![_Figure 5a_](/Report/assets/qcnn.jpeg)            | ![_Figure 5b_](/Report/assets/imp_qcnn.jpeg)             |
 | *(a) QCNN Sqrd. Error Loss wo/Residual Blocks* | *(b) QCNN w/Residual Blocks (Visualization)* |
 
 ---
@@ -110,14 +110,28 @@ The QCNN incorporates additional components:
 
 The baseline QCNN achieved a respectable accuracy (77%) in significantly fewer epochs (200) compared to the CCNN (which required ~100 epochs to reach similar levels, eventually peaking at 81.5% after 300 epochs).
 
-This suggests that QCNNs hold promise, particularly as quantum hardware matures and overcomes the limitations of classical simulation. The exploration of residual blocks further contributes to understanding how to optimize these quantum neural network architectures.
+Meanwhile, our Improved-Residual-QCNN challenges our current Classical CNN! This small improvement and adding residual-blocks is made a significant breakthrough!
 
-*(Note: The placeholder image below was included in the report.)*
-![_Figure 6_](/Report/assets/image7.png)
-*Figure 6: Placeholder*
+|       |    |
+| :-------------------------------------------------: | :---------------------------------------------------: |
+| ![_Figure 6a_](/Report/assets/2.jpeg)            | ![_Figure 6b_](/Report/assets/imp_qcnn.jpeg)             |
+| ![_Figure 6c_](/Report/assets/1.jpeg)            |
+
+Q. **So, What improved**?
+
+Ans. We hypothezised that it is mostly to do with the ``*Diagonal wins of a player*'', this is because, when we analyzed all the games that our quantum model got wrong, we see that it was only the games where the wins were diagonal.
+
+That is, the model correctly predicted all horizontal and vertical wins correctly. In case of diagonal cases...
+
+**Correct**: 32/56 **Incorrect**: 24/56
+
+So we think the diagonalization due to the ``Residual-Blocks'' and convolution layers made it so that our new QCNN was good at identifying those extra features. Our new and improved model however, has only 19 incorrect diagonals.
 
 ---
 
 ## 📚 References
 
-*(Please add the specific literature references from your report here.)*
+Wen, J., Huang, Z., Cai, D. et al. Enhancing the expressivity of quantum neural networks with residual connections. Commun Phys 7, 220 (2024). https://doi.org/10.1038/s42005-024-01719-1
+https://pennylane.ai/qml/glossary/qcnn
+https://docs.quantum.ibm.com/api/qiskit/0.27/qiskit.algorithms.optimizers.COBYLA
+https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZFeatureMap
