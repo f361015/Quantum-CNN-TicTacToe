@@ -113,7 +113,7 @@ The baseline QCNN achieved a respectable accuracy (77%) in significantly fewer e
 This suggests that QCNNs hold promise, particularly as quantum hardware matures and overcomes the limitations of classical simulation. The exploration of residual blocks further contributes to understanding how to optimize these quantum neural network architectures.
 
 *(Note: The placeholder image below was included in the report.)*
-![_Figure 6_](/Report/assets/image6.png)
+![_Figure 6_](/Report/assets/image7.png)
 *Figure 6: Placeholder*
 
 ---
