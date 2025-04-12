@@ -18,7 +18,7 @@ Mini Project - \emph{CS-2-14(PO)}  \\\\  \small{By} \\\\  Krishiv Trivedi\hspace
 \section*{Introduction}
 Quantum computing is a new computing paradigm based on quantum
 mechanics that utilizes qubits instead of classical bits to store and process
-information. Quantum nature like superposition and entanglement aren't just theoritical figments, now with the capacity to actually engineer these quantum systems, this nature can be meaningfully utilized and harnessed to speed up NP Algorithms like ``\emph{Brute-Force} \emph{\textbf{Knapsack}}''\footnote{[https://en.wikipedia.org/wiki/Knapsack\_problem]} and the ``\emph{\textbf{Travelling Salesman Problem}}'' (TSP) and improve our modern AI models.\\
+information. Quantum nature like superposition and entanglement aren't just theoretical figments, now with the capacity to actually engineer these quantum systems, this nature can be meaningfully utilized and harnessed to speed up NP Algorithms like ``\emph{Brute-Force} \emph{\textbf{Knapsack}}''\footnote{[https://en.wikipedia.org/wiki/Knapsack\_problem]} and the ``\emph{\textbf{Travelling Salesman Problem}}'' (TSP) and improve our modern AI models.\\
 
  While the majority of our journey includes learning about theory of quantum circuits, learning and developing our own quantum algorithms for solving TSP etc. Our final aim of this paper will be the upcoming, \emph{Quantum Convolutional Neural Networks} (\textbf{QCNNs})\footnote{[https://pennylane.ai/qml/glossary/qcnn]}. We will demonstrate not only of how we can use the `Quantum' to develop better convolutional neural networks but also show an implimentation of a quantum circuit-based algorithm, \emph{quantum residual neural networks}\footnote{[https://doi.org/10.1038/s42005-024-01719-1]}.\\
 
@@ -40,7 +40,7 @@ This is used extensively in quantum algorithms. Our main focus was on how to mak
 
 \section*{Methodology \& Implementation Idea}
 
-For our methodology, first we'll make a Quantum CNN on a particular dataset, after which we will make a equivalent Classical CNN annd compare the results to see which one performs better and their cost function trends. After this, we will implement the `Residual-block' into our QCNN to see the difference it produces. 
+For our methodology, first we'll make a Quantum CNN on a particular dataset, after which we will make a equivalent Classical CNN and compare the results to see which one performs better and their cost function trends. After this, we will implement the `Residual-block' into our QCNN to see the difference it produces. 
 \begin{itemize}
 \item \textbf{Dataset} consists of all tic-tac-toe games which have not ended in a draw. This dataset is actually very complex compared to all the dataset which a QCNN is typically trained on, i.e. detecting horizontal/vertical stripes on a 2x2 or a 4x2 grid, but we decided to push the limits of current standards. This is because we wanted to make a QCNN model never made before.
 
@@ -178,7 +178,7 @@ Meanwhile, our Improved-Residual-QCNN challenges our current Classical CNN! This
 
 \begin{itemize}
 \item[Q.] \textbf{\emph{So, What improved}}?
-\item[\textbf{$\rightarrow$}] We hypothezised that it is mostly to do with the ``\emph{Diagonal wins of a player}'', this is because, when we analyzed all the games that our quantum model got wrong, we see that it was only the games where the wins were diagonal.
+\item[\textbf{$\rightarrow$}] We hypothesized that it is mostly to do with the ``\emph{Diagonal wins of a player}'', this is because, when we analyzed all the games that our quantum model got wrong, we see that it was only the games where the wins were diagonal.
 
 That is, the model correctly predicted all horizontal and vertical wins correctly. In case of diagonal cases...
 \[ \text{\textbf{Correct}: } 32/56 \text{ \textbf{Incorrect}: } 24/56 \]
@@ -199,9 +199,9 @@ So we think the diagonalization due to the ``Residual-Blocks'' and convolution l
 
 Our future prospects include making a multi-classification model. For example, a model which detects if a game is won by white or black or is a draw. We already partially have the multimodel ready on hand if you need for demonstration.\\
 
-\indent \textbf{Litrature Review \& References: }
+\indent \textbf{Literature Review \& References: }
 \begin{itemize}
-\item Wen, J., Huang, Z., Cai, D. et al. Enhancing the expressivity of quantum neural networks with residual connections. Commun Phys 7, 220 (2024). https://doi.org/10.1038/s42005-024-01719-1
+\item Wen, J., Huang, Z., Cai, D. et al. Enhancing the expressivity of quantum neural networks with residual connections. Commun Phys 7, 220 (2024).
 \item https://pennylane.ai/qml/glossary/qcnn
 \item https://docs.quantum.ibm.com/api/qiskit/0.27/qiskit.algorithms.optimizers.COBYLA
 \item https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZFeatureMap
