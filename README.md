@@ -7,7 +7,7 @@
 * Piyush Kumar [2023UMA0227]
 * Krishna [2023UEE0140]
 * Jyoti Yadav [2023UEE0139]
-* Meghanshu Verma [2021UEE0148](https://github.com/Dark-Awesome)
+* Meghanshu Verma [[2021UEE0148](https://github.com/Dark-Awesome)]
   
 **Supervisor:**
 * Sumit Kumar Pandey
